@@ -1,16 +1,16 @@
 from PyQt5.QtWidgets import QWidget, QApplication
 from PyQt5.QtGui import QPixmap
-from design import Ui_Form as Design
 import sys
 from PIL.ImageQt import ImageQt
 from PIL import Image, ImageDraw
 from random import randint
+from PyQt5 import uic
 
 
-class Widget(QWidget, Design):
+class Widget(QWidget):
     def __init__(self):
         super().__init__()
-        self.setupUi(self)
+        uic.loadUi('designer.ui', self)
         self.pushButton.clicked.connect(self.circles)
 
     def circles(self):
